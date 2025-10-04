@@ -1,4 +1,4 @@
-package org.example.awt;
+package org.example.interest;
 
 public class InterestConsole {
     private static final String PROPERTIES_FILE = "interest.properties";

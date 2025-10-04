@@ -1,4 +1,4 @@
-package org.example.awt;
+package org.example.interest;
 
 public interface Display {
 
