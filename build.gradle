@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'org.example.awt.InterestFx'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = '21'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.19.0'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+shadowJar {
+    archiveBaseName.set('claude-j')
+    archiveClassifier.set('')
+    archiveVersion.set('1.0')
+    manifest {
+        attributes 'Main-Class': 'org.example.awt.InterestConsole'
+    }
+    mergeServiceFiles()
+    configurations = [project.configurations.runtimeClasspath]
+}
