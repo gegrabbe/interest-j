@@ -6,11 +6,14 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import static org.example.MyProperties.FIRST_NAME;
-import static org.example.MyProperties.LAST_NAME;
+import static org.example.NameProperties.FIRST_NAME;
+import static org.example.NameProperties.LAST_NAME;
 
-public class Main {
-    MyProperties properties = new MyProperties();
+/**
+ * Simple main routine that asks for your first and last name then says hello.
+ */
+public class NameApp {
+    NameProperties properties = new NameProperties();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
 
     public void hello() {
@@ -30,7 +33,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main app = new Main();
+        NameApp app = new NameApp();
         app.hello();
     }
 

@@ -5,8 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class MyProperties {
-    private static final String PROPERTIES_FILE = "properties.properties";
+public class NameProperties {
+    private static final String PROPERTIES_FILE = "name.properties";
     public static final String FIRST_NAME = "firstName";
     public static final String LAST_NAME = "lastName";
     Properties properties = new Properties();
