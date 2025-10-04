@@ -38,11 +38,13 @@ public class NameApp {
     }
 
     private static String promptForValue(Scanner scanner, String fieldName, String previousValue) {
-        if (StringUtils.isNotEmpty(previousValue)) {
-            System.out.print("Enter your " + fieldName + " (" + previousValue + "): ");
-        } else {
+        if (previousValue.isEmpty()) {
             System.out.print("Enter your " + fieldName + ": ");
+        } else {
+            System.out.print("Enter your " + fieldName + " (" + previousValue + "): ");
         }
-        return StringUtils.capitalize(StringUtils.trim(scanner.nextLine()));
+        String input = StringUtils.capitalize(
+                StringUtils.trimToEmpty(scanner.nextLine()).toLowerCase());
+        return input.isEmpty() ? previousValue : input;
     }
 }
